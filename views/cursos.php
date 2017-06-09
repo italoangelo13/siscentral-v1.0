@@ -24,6 +24,7 @@ if(!$resultado){ ?>
 <div class="row" style="padding: 10px;">
     <?php
     while ($dados = $resultado -> fetch_assoc()){
+        $codigo = $dados['codigo'];
         $nome = $dados['nome'];
         $sumario = $dados['sumario'];
         $carga = $dados['carga'];
@@ -35,7 +36,7 @@ if(!$resultado){ ?>
     <div class="card-block">
         <h4 class="card-title"><?php echo $nome; ?> <small>Carga Horaria: <?php echo $carga; ?> Horas - (<?php echo $duracao; ?>)</small></h4>
     <p class="card-text" ><?php echo $sumario; ?></p>
-    <a href="#" class="btn btn-primary">Ver Mais</a>
+    <a href="mostraCurso.php?codigo=<?php echo $codigo; ?>" class="btn btn-primary">Ver Mais</a>
   </div>
 </div>
     <?php
